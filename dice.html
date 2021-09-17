@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>サイコロ</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="dice.css">
+</head>
+<body>
+	<div class="dice">
+		<div><span>●</span></div>
+		<div><span>●<br><br>●</span></div>
+		<div><span>●<br>●<br>●</span></div>
+		<div><span>●●<br><br>●●</span></div>
+		<div><span>●●<br>●<br>●●</span></div>
+		<div><span>●●<br>●●<br>●●</span></div>
+	</div>
+	<div id="query"></div>
+	<script>
+		var param = location.search;
+		if(location.search.substring(1))
+		{
+			document.getElementById('query').innerHTML = '<META http-equiv="Refresh" content="2;URL=./thema.html' + param + '">';
+		}
+		else
+		{
+			document.getElementById('query').innerHTML = '<META http-equiv="Refresh" content="2;URL=./thema.html">';
+		}
+	</script>
+</body>
+</html>

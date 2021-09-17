@@ -1,0 +1,82 @@
+.dice {
+	margin: 40px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 30%;
+	left: 43%;
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	animation: rotate-anim 4s linear infinite;
+}
+
+@keyframes rotate-anim {
+	0% {transform: rotateX(0) rotateY(0); }
+	100% {transform: rotateX(-360deg) rotateY(720deg); }
+}
+
+.dice div {
+	width: 95%;
+	height: 95%;
+	position: absolute;
+	border-radius: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* œ */
+.dice div:nth-child(1) {
+	background: rgba(255, 127, 127, .8);
+	transform: translateZ(50px);
+}
+
+/* œœ */
+.dice div:nth-child(2) {
+	background: rgba(255, 127, 255, .8);
+	transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* œœœ */
+.dice div:nth-child(3) {
+	background: rgba(127, 127, 255, .8);
+	transform: rotateY(90deg) translateZ(50px);
+}
+
+/* œœœœ */
+.dice div:nth-child(4) {
+	background: rgba(127, 255, 255, .8);
+	transform: rotateY(-90deg) translateZ(50px);
+}
+
+/* œœœœœ */
+.dice div:nth-child(5) {
+	background: rgba(191, 255, 127, .8);
+	transform: rotateX(90deg) translateZ(50px);
+}
+
+/* œœœœœœ */
+.dice div:nth-child(6) {
+	background: rgba(255, 191, 127, .8);
+	transform: rotateY(180deg) translateZ(50px);
+}
+
+/* ƒ_ƒCƒX‚Ì–Ú */
+.dice div span{
+	display: block;
+	margin-left: 18px;
+	font-size: 34px;
+	line-height: 28px;
+	letter-spacing: 18px;
+	text-align: center;
+	color: transparent;
+	background: rgba( 0, 0, 0, 0.4);
+	text-shadow: 1px 1px 1px rgba( 255, 255, 255, 0.7);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+/* œœ and œœœ */
+.dice div:nth-child(2) span, .cube div:nth-child(3) span{
+	transform: translate(-5px,8px) rotate(45deg);
+}

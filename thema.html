@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>トークテーマ</title>
+	<meta charset="UTF-8">
+	<style>
+	.text{
+		text-align: center;
+	}
+	.button{
+	text-align: right;
+	margin: 100px;
+	}
+	.fontSize{
+		font-size: 50px;
+	}
+	</style>
+</head>
+<body>
+	<h1>テーマ：</h1>
+    <div class="text" id="displayThema"></div>
+    <div class="button" id="displayButton"></div>
+	<script>
+		var themaList = ['入社1年目の時の気持ちや業務内容','自己紹介','自粛で始めたおすすめおうち時間の過ごし方','最近食べた美味しいもの','犬、猫どっち派？'];
+		var param = location.search;
+		var dupNumber = param.split('\=');
+		
+		if(location.search.substring(1))
+		{
+			for(var i = 1;i < dupNumber.length;i++)
+			{
+				themaList.splice(Number(dupNumber[i]),1);
+			}
+		}
+		
+		var randomNumber = Math.floor(Math.random() * (themaList.length));
+		
+		if(themaList.length == 1)
+		{
+			var output = '<p class="fontSize">' + themaList[randomNumber] + '</p><p>最後のトークテーマ</p>';
+		}
+		else
+		{
+			var output = '<p class="fontSize">' + themaList[randomNumber] + '</p>';
+		}
+		
+		document.getElementById('displayThema').innerHTML = output;
+		
+		
+		if(themaList.length == 1)
+		{
+			document.getElementById('displayButton').innerHTML = '<button onclick="location.href=\'./index.html\'">トップへ戻る</button>';
+		}
+		else if(location.search.substring(1))
+		{
+			document.getElementById('displayButton').innerHTML = '<button onclick="location.href=\'./dice.html'+ param + '\=' + randomNumber.toString() + '\'">戻る</button>';
+		}
+		else
+		{
+			document.getElementById('displayButton').innerHTML = '<button onclick="location.href=\'./dice.html?number=' + randomNumber.toString() + '\'">戻る</button>';
+		}
+	</script>
+</body>
+</html>
